@@ -21,7 +21,7 @@ CREATE TABLE cursos(
 );
 
 CREATE TABLE estudiantes(
-  dni INT NOT NULL CHECK (dni > 10000000 AND dni < 100000000),
+  dni INT NOT NULL CHECK (dni > 100000 AND dni < 100000000),
   nombre VARCHAR(25) NOT NULL,
   apellido VARCHAR(25) NOT NULL,
   Id_Curso INT NOT NULL, 
@@ -41,13 +41,12 @@ CREATE TABLE telefonos(
   FOREIGN KEY (Id_Tutor) REFERENCES tutores (Id_Tutor) 
 );
   
-CREATE TABLE estudianteTutor(
-  Dni INT NOT NULL CHECK (Dni > 10000000 AND Dni < 100000000),
+CREATE TABLE alumnosYTutores(
+  dni INT NOT NULL CHECK (dni > 10000000 AND dni < 100000000),
   Id_Tutor INT NOT NULL,
-  CONSTRAINT fk_estudiantetutor_tutor
-  FOREIGN KEY (Id_Tutor) REFERENCES tutores (Id_Tutor),
-  CONSTRAINT fk_estudiantetutor_estudiante
-  FOREIGN KEY (Dni_Estudiante) REFERENCES estudiantes (Dni)
+  PRIMARY KEY (dni, Id_Tutor),
+  CONSTRAINT fk_tutor FOREIGN KEY (Id_Tutor) REFERENCES tutores (Id_Tutor),
+  CONSTRAINT fk_alumno FOREIGN KEY (dni) REFERENCES estudiantes (dni)
 );
   
 INSERT INTO cursos (Anio, Division, Comision, Especialidad, Turno, Ciclo)
@@ -57,7 +56,7 @@ INSERT INTO tutores (Id_Tutor, Nombre, Apellido)
 VALUES (1, 'juan', 'rios');
   
 INSERT INTO estudiantes (dni, Nombre, Apellido, Id_curso)
-VALUES (12343345, 'facundo', 'rios', 1 , 1);
+VALUES (123433452, 'facundo', 'rios', 1 , 1);
   
 INSERT INTO telefonos (Id_Telefono, CodigoArea, Tipo, Numero)
 VALUES (1, 11, 'celular', 34593475);
