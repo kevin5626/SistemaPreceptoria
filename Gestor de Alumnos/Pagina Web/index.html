@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carga de datos</title>
+</head>
+
+<body>
+    <h1>Carga de datos</h1>
+
+    <form action="../Clases PHP/registroAlumno.php" method="post">
+        <h2>Datos del curso</h2>
+
+        <label for="anio">Año:</label>
+        <input type="text" id="anio" name="anio" required>
+        <br><br>
+
+        <label for="anio">Division:</label>
+        <input type="text" id="division" name="division" required>
+        <br><br>
+
+        <label for="comision">Comisión:</label>
+        <select id="comision" name="comision" required>
+            <option value="">Seleccionar</option>
+            <option value="1">1°</option>
+            <option value="2">2°</option>
+        </select>
+        <br><br>
+
+        <label for="especialidad">Especialidad:</label>
+        <input type="text" id="especialidad" name="especialidad" required>
+        <br><br>
+
+        <label for="turno">Turno:</label>
+        <select id="turno" name="turno" required>
+            <option value="">Seleccionar</option>
+            <option value="maniana">Mañana</option>
+            <option value="tarde">Tarde</option>
+            <option value="vespertino">Vespertino</option>
+        </select>
+        <br><br>
+
+        <label for="ciclo">Ciclo:</label>
+        <select id="ciclo" name="ciclo" required>
+            <option value="">Seleccionar</option>
+            <option value="basico">Básico</option>
+            <option value="superior">Superior</option>
+        </select>
+        <br><br>
+
+        <h2>Datos del alumno</h2>
+
+        <label for="dni_alumno">DNI del alumno:</label>
+        <input type="text" id="dni_alumno" name="dni_alumno" required>
+        <br><br>
+
+        <label for="nombre_alumno">Nombre:</label>
+        <input type="text" id="nombre_alumno" name="nombre_alumno" required>
+        <br><br>
+
+        <label for="apellido_alumno">Apellido:</label>
+        <input type="text" id="apellido_alumno" name="apellido_alumno" required>
+        <br><br>
+
+
+        <h2>Datos del tutor</h2>
+
+        <label for="nombre_tutor">Nombre del tutor:</label>
+        <input type="text" id="nombre_tutor" name="nombre_tutor" required>
+        <br><br>
+
+        <label for="apellido_tutor">Apellido del tutor:</label>
+        <input type="text" id="apellido_tutor" name="apellido_tutor" required>
+        <br><br>
+
+
+        <h2>Teléfono del tutor</h2>
+
+        <label for="tipo_telefono">Tipo de teléfono:</label>
+        <select id="tipo_telefono" name="tipo_telefono" required>
+            <option value="">Seleccionar</option>
+            <option value="celular">Celular</option>
+            <option value="fijo">Fijo</option>
+        </select>
+        <br><br>
+
+        <label for="codigo_area">Código de área:</label>
+        <input type="text" id="codigo_area" name="codigo_area" required>
+        <br><br>
+
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" required>
+        <br><br>
+
+        <input type="submit" value="Cargar datos">
+    </form>
+</body>
+</html>
+

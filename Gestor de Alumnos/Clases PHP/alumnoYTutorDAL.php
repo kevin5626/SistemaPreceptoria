@@ -12,7 +12,7 @@
             mysqli_set_charset($conexion, 'utf8');
             $baseDatos = mysqli_select_db($conexion, $this -> basededatos) or die ("Error seleccionar la BD: ");
 
-            $consulta = (sprintf("INSERT INTO alumnosYTutores (Dni, Id_Tutor) VALUES('%s', '%s');",
+            $consulta = (sprintf("INSERT INTO alumnosYTutores (dni, Id_Tutor) VALUES('%s', '%s');",
             $alumnoYTutor -> getDni(), $alumnoYTutor -> getIdTutor()));
 
             mysqli_query($conexion, $consulta);
@@ -29,7 +29,7 @@
             $registros = array();
 
             while($registro = mysqli_fetch_array($resultado)) {
-                $alumnoYTutor = new AlumnoYTutor ($registro["Dni"], $registro["Id_Tutor"]);
+                $alumnoYTutor = new AlumnoYTutor ($registro["dni"], $registro["Id_Tutor"]);
 
                 $registros[] = $alumnoYTutor;
             } 
