@@ -1,2 +1,2 @@
-VerClientes.php muestra y permite consultar los alumnos registrados.trae los datos de los alumnos desde la base de datos y muestra también su curso, tutor y teléfono del tutor.
+VerDatosAlumnos.php muestra y permite consultar los alumnos registrados.trae los datos de los alumnos desde la base de datos y muestra también su curso, tutor y teléfono del tutor.
 se puede filtrar por año y división del curso, DNI,etc. tiene un botón para eliminar un alumno; al confirmar, borra ese registro y su vínculo con el tutor.
