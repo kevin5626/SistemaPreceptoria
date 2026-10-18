@@ -15,6 +15,7 @@ CREATE TABLE cursos(
   Division INT NULL,
   Comisión VARCHAR(10),
   especialidad VARCHAR(30),
+  Turno VARCHAR(20),
   ciclo VARCHAR(20),
   PRIMARY KEY (Id_Curso)
 );
@@ -31,6 +32,8 @@ CREATE TABLE estudiantes(
   CONSTRAINT fk_estudiante_curso
   FOREIGN KEY (Id_Curso) REFERENCES cursos (Id_Curso) 
 );
+ALTER TABLE estudiantes
+  ADD COLUMN DNI VARCHAR(15) NULL AFTER Id_Estudiante;
  
 CREATE TABLE telefonos(
   Id_Telefono INT NOT NULL AUTO_INCREMENT,
@@ -51,6 +54,10 @@ CREATE TABLE estudianteTutor(
   CONSTRAINT fk_estudiantetutor_estudiante
   FOREIGN KEY (Id_Estudiante) REFERENCES estudiantes (Id_Estudiante)
 );
+  
+  ALTER TABLE estudianteTutor
+  ADD UNIQUE KEY uq_estudiante_tutor (Id_Estudiante, Id_Tutor);
+
   
 INSERT INTO cursos (Año, Division, Comisión, especialidad, ciclo)
 VALUES (5, 2, '522', 'programacion', 'superior');

@@ -1,19 +1,21 @@
 <?php
     require_once("telefono.php");
+    require_once __DIR__ . '/../db_config.local.php';
 
     class TelefonoDAL {
-        private $usuario = 'root';
-        private $contrasena = '1234';
-        private $servidor = "localhost";
-        private $basededatos = 'gestor_alumnos';
+        private $usuario = DB_USER;
+        private $contrasena = DB_PASSWORD_OTROS;
+        private $servidor = DB_SERVER;
+        private $basededatos = DB_NAME;
     
         public function insertTelefono($telefono) {
             $conexion = mysqli_connect($this -> servidor, $this -> usuario, $this -> contrasena) or die ("Error al conectar: ");
             mysqli_set_charset($conexion, 'utf8');
             $baseDatos = mysqli_select_db($conexion, $this -> basededatos) or die ("Error seleccionar la BD: ");
 
-            $consulta = (sprintf("INSERT INTO telefonos (tipo_telefono, codigo_area, numero, Id_Tutor) VALUES('%s', '%s', '%s', '%s');",
-            $telefono -> getTipoTelefono(), $telefono -> getCodigoArea(), $telefono -> getNumero(), $telefono -> getIdTutor1()));
+            $tipo = mysqli_real_escape_string($conexion, $telefono->getTipoTelefono());
+            $consulta = sprintf("INSERT INTO telefonos (Tipo, CodigoArea, Numero, Id_Tutor) VALUES('%s', %d, %d, %d);",
+                $tipo, $telefono->getCodigoArea(), $telefono->getNumero(), $telefono->getIdTutor1());
 
             mysqli_query($conexion, $consulta);
 

@@ -1,11 +1,12 @@
 <?php
     require_once("alumnoYTutor.php");
+    require_once __DIR__ . '/../db_config.local.php';
 
     class AlumnoYTutorDAL {
-        private $usuario = 'root';
-        private $contrasena = '1234';
-        private $servidor = "localhost";
-        private $basededatos = 'gestor_alumnos';
+        private $usuario = DB_USER;
+        private $contrasena = DB_PASSWORD_OTROS;
+        private $servidor = DB_SERVER;
+        private $basededatos = DB_NAME;
     
         public function insertAlumnoYTutor($alumnoYTutor) {
             $conexion = mysqli_connect($this -> servidor, $this -> usuario, $this -> contrasena) or die ("Error al conectar: ");

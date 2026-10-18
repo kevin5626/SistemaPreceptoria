@@ -15,6 +15,7 @@ CREATE TABLE cursos(
   Division INT NULL,
   Comisión VARCHAR(10),
   especialidad VARCHAR(30),
+  Turno VARCHAR(20),
   ciclo VARCHAR(20),
   PRIMARY KEY (Id_Curso)
 );
