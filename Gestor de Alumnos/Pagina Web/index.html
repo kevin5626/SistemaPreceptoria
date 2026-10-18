@@ -7,25 +7,23 @@
 </head>
 
 <body>
+
     <h1>Carga de datos</h1>
 
-    <form action="../Clases PHP/registroAlumno.php" method="post">
+    <form action="../Clases PHP/registroCliente.php" method="post">
+
         <h2>Datos del curso</h2>
 
         <label for="anio">Año:</label>
         <input type="text" id="anio" name="anio" required>
         <br><br>
 
-        <label for="anio">Division:</label>
-        <input type="text" id="division" name="division" required>
+        <label for="division">División:</label>
+        <input type="number" id="division" name="division" required>
         <br><br>
 
         <label for="comision">Comisión:</label>
-        <select id="comision" name="comision" required>
-            <option value="">Seleccionar</option>
-            <option value="1">1°</option>
-            <option value="2">2°</option>
-        </select>
+        <input type="text" id="comision" name="comision" required>
         <br><br>
 
         <label for="especialidad">Especialidad:</label>
@@ -35,19 +33,16 @@
         <label for="turno">Turno:</label>
         <select id="turno" name="turno" required>
             <option value="">Seleccionar</option>
-            <option value="maniana">Mañana</option>
+            <option value="mañana">Mañana</option>
             <option value="tarde">Tarde</option>
-            <option value="vespertino">Vespertino</option>
+            <option value="noche">Noche</option>
         </select>
         <br><br>
 
         <label for="ciclo">Ciclo:</label>
-        <select id="ciclo" name="ciclo" required>
-            <option value="">Seleccionar</option>
-            <option value="basico">Básico</option>
-            <option value="superior">Superior</option>
-        </select>
+        <input type="text" id="ciclo" name="ciclo" required>
         <br><br>
+
 
         <h2>Datos del alumno</h2>
 
@@ -93,8 +88,11 @@
         <input type="text" id="numero" name="numero" required>
         <br><br>
 
+
         <input type="submit" value="Cargar datos">
+
     </form>
+
 </body>
 </html>
 
